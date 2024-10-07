@@ -1,0 +1,3 @@
+[*] Install PiP & Virtual Environement in windows
+[*] Install Postgresql & pgadmin in windows
+[*] Install Docker in windows

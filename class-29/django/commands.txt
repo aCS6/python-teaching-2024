@@ -1,0 +1,15 @@
+﻿Start a project
+
+django-admin startproject myproject
+django-admin startproject LMS .
+
+Run a Django
+
+(Default PORT 8000)
+python3 manage.py runserver 
+
+(Config a PORT)
+python3 manage.py runserver 9001
+
+Create an admin
+python3 manage.py createsuperuser

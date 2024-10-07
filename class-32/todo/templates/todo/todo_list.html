@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Todo List</h2>
+
+    <!-- <h4><a href="http://127.0.0.1:8000/create/">ADD A Todo</a></h4>-->
+    <h4><a href="{% url 'todo_create' %}">ADD A Todo</a></h4>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Is completed</th>
+            <th>Action</th>
+        </tr>
+
+        {% for todo in todos %}
+        <tr>
+            <td>{{ todo.title }}</td>
+            <td>
+                {% if todo.completed %}
+                    Completed
+                {% else %}
+                    Not Completed
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'todo_update' todo.pk %}">Edit</a>
+                <a href="{% url 'delete_todo' todo.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+
+</body>
+
+</html>
